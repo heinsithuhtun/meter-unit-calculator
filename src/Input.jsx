@@ -5,22 +5,21 @@ function Input({setAmount}){
   
   let handleSubmit=(e)=>{
      e.preventDefault();
-     let unit = [200, 150, 100, 75, 50, 30, 1];
+     let unit = [200, 150, 100, 75, 50, 30, 0];
      let rate = [125, 120, 110, 90, 70, 50, 35];
      let usedunit = [50, 50, 25, 25, 20, 30];
 
-     let u = unit.find(i => num > i);
-     let j = unit.indexOf(u);
-     let amount = (num - u) * rate[j];
+     let matchUnit = unit.find(i => num > i);
+     let matchUindex = unit.indexOf(matchUnit);
+     let amount = (num - matchUnit) * rate[matchUindex];
 
-     let i = j + 1;
+     let i = matchUindex + 1;
      for (i; i < unit.length; i++) {
-      amount += rate[i] * usedunit[j];
-      j++;
+      amount += rate[i] * usedunit[matchUindex];
+      matchUindex++;
       }
-     
-     
-     setAmount(amount);
+          
+     setAmount( amount);
     
   }
 

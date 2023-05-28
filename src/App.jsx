@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 
 export default function App() {
-let [amount , setAmount] = useState(0);
+let [amount , setAmount] = useState(null);
 return (
   <div className='flex flex-col lg:flex-row h-screen justify-evenly '>
     <div className='mt-24 mx-auto lg:mx-0 lg:mt-40'>
